@@ -1,0 +1,19 @@
+page-tabs {
+
+}
+
+.tabs-md .tab-button[aria-selected=false] {
+    opacity: 0.75;
+}
+
+.tabs-md .tab-button[aria-selected=false] .tab-button-icon {
+    opacity: 0.75;
+}
+
+.tabs-ios .tab-button[aria-selected=false] {
+    opacity: 0.75;
+}
+
+.tabs-ios .tab-button[aria-selected=false] .tab-button-icon {
+    opacity: 0.75;
+}

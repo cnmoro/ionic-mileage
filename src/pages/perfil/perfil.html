@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Perfil do Carro</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only on-click="goToSobre()">
+        <ion-icon name="information"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="text-align: center; width: 100%;">
+  <ion-item style="width: 100%; padding-right: 8px">
+    <ion-label stacked><strong>Consumo utilizando GASOLINA (km/l)</strong></ion-label>
+    <ion-input type="number" [(ngModel)]="consumoGasolina" placeholder="Exemplo: 10.5"></ion-input>
+  </ion-item>
+
+  <ion-item style="width: 100%; padding-right: 8px">
+    <ion-label stacked><strong>Consumo utilizando ETANOL (km/l)</strong></ion-label>
+    <ion-input type="number" [(ngModel)]="consumoEtanol" placeholder="Exemplo: 9.5"></ion-input>
+  </ion-item>
+
+  <br/>
+
+  <button ion-button style="width: 80%; text-align: center" on-click="salvarMudancas()">
+    Salvar
+  </button>
+</ion-content>

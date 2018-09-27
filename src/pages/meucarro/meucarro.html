@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Meu Carro</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only on-click="goToSobre()">
+        <ion-icon name="information"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/imgs/carro.jpeg" />
+    <ion-card-content>
+      <ion-card-title>
+        Carro
+      </ion-card-title>
+      <p>
+        Automóvel (do grego αὐτός ["autós"], "por si próprio", e do latim mobilis, "mobilidade", como referência a um
+        objeto responsável pela sua própria locomoção) ou carro (das línguas celtas, através do latim carru) é um
+        veículo motorizado com quatro rodas.
+      </p>
+      <br/>
+      <button ion-button style="width: 100%; text-align: center" on-click="goToModificaCarro()">
+        Modificar Perfil do Carro
+      </button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

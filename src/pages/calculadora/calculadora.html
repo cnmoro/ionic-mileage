@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Calculadora</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only on-click="goToSobre()">
+        <ion-icon name="information"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="text-align: center; width: 100%;">
+  <ion-item style="width: 100%; padding-right: 8px">
+    <ion-label stacked><strong>Preço da Gasolina (R$)</strong></ion-label>
+    <ion-input type="number" [(ngModel)]="precoGasolina" placeholder="Exemplo: 4.2"></ion-input>
+  </ion-item>
+
+  <ion-item style="width: 100%; padding-right: 8px">
+    <ion-label stacked><strong>Preço do Etanol (R$)</strong></ion-label>
+    <ion-input type="number" [(ngModel)]="precoEtanol" placeholder="Exemplo: 2.6"></ion-input>
+  </ion-item>
+
+  <br />
+
+  <button ion-button style="width: 80%; text-align: center" on-click="showLoading()">
+    Calcular
+  </button>
+
+  <br />
+  <br />
+  <div [hidden]="esconderResultado" style="width: 100%">
+    <p>
+      O combustível com maior custo benefício nesse momento para o seu carro é {{resultadoCalculo}} !
+    </p>
+    <img src="assets/imgs/gasolina.png" [hidden]="hideGasolina" style="width: 7rem; height: 7rem;"/>
+    <img src="assets/imgs/etanol.png" [hidden]="hideEtanol" style="width: 7rem; height: 7rem;"  />
+    <p>
+      {{resultadoExplicacao}}
+    </p>
+  </div>
+
+</ion-content>

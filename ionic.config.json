@@ -1,0 +1,7 @@
+{
+  "name": "mileage",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
