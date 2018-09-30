@@ -39,6 +39,7 @@ export class PerfilPage {
     this.storage.set("consumoGasolina", this.consumoGasolina);
     this.storage.set("consumoEtanol", this.consumoEtanol);
     this.toastSucessoSalvo();
+    this.navCtrl.pop();
   }
 
   goToSobre() {

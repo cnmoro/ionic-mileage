@@ -45,32 +45,40 @@ export class CalculadoraPage {
     public loadingCtrl: LoadingController,
     public storage: Storage
   ) {
-    this.storage.get("consumoGasolina").then(val => {
-      if (val) {
-        this.consumoGasolina = val;
-      } else {
-        this.consumoGasolina = 0;
-      }
-    });
-    this.storage.get("consumoEtanol").then(val => {
-      if (val) {
-        this.consumoEtanol = val;
-      } else {
-        this.consumoEtanol = 0;
-      }
-    });
-    this.storage.get("precoGasolina").then(val => {
+    this.updateConsumo();
+    this.updatePreco();
+  }
+
+  async updatePreco() {
+    await this.storage.get("precoGasolina").then(val => {
       if (val) {
         this.precoGasolina = val;
       } else {
         this.precoGasolina = 0;
       }
     });
-    this.storage.get("precoEtanol").then(val => {
+    await this.storage.get("precoEtanol").then(val => {
       if (val) {
         this.precoEtanol = val;
       } else {
         this.precoEtanol = 0;
+      }
+    });
+  }
+
+  async updateConsumo() {
+    await this.storage.get("consumoGasolina").then(val => {
+      if (val) {
+        this.consumoGasolina = val;
+      } else {
+        this.consumoGasolina = 0;
+      }
+    });
+    await this.storage.get("consumoEtanol").then(val => {
+      if (val) {
+        this.consumoEtanol = val;
+      } else {
+        this.consumoEtanol = 0;
       }
     });
   }
@@ -88,6 +96,8 @@ export class CalculadoraPage {
       this.hideLoading();
       this.calcularCustoBeneficio();
     }, 1000);
+
+    this.updateConsumo();
   }
 
   hideLoading() {
